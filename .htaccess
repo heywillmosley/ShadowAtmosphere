@@ -14,7 +14,7 @@
 
 # --------------------------------------------------------------------------------
 
-RewriteBase /shadow
+
 
 # Sets the enviroment up to follow symbolic links using "Options directive"
 Options +FollowSymLinks
@@ -28,6 +28,26 @@ RewriteCond %{SCRIPT_FILENAME} !-d
 RewriteCond %{SCRIPT_FILENAME} !-f  
 
 RewriteRule ^(.*/?$) index.php?p=$1 
+
+
+<IfModule mod_rewrite.c>
+RewriteEngine on
+# For sales:
+RewriteRule ^shop/sales/?$ sales.php
+# For the primary categories:
+RewriteRule ^shop/([A-Za-z\+]+)/?$ shop.php?type=$1
+# For specific products:
+RewriteRule ^browse/([A-Za-z\+\-]+)/([A-Za-z\+\-]+)/([0-9]+)$ browse.php?type=$1&category=$2&id=$3
+
+# For HTTPS pages:
+# Checks for condition where HTTPS is off
+RewriteCond %{HTTPS} off
+
+# Attempt to match 'checkout, etc, admin/anything'
+# If a match is made, the URL is rewritten to https://hostname/$1
+# Where $1 is the matched item
+RewriteRule ^(checkout\.php|billing\.php|final\.php|admin/(.*))$ https://%{HTTP_HOST}/$1 [R=301,L]
+</IfModule>
 
 
 #MAINTENANCE-PAGE REDIRECT

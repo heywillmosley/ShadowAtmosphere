@@ -24,4 +24,4 @@
  * If Your Shadow Directory is named different, pleasde change 'Shadow/index.php'
  * to the correct path
  */
- 	require_once 'Shadow/index.php';
+ 	require_once 'shadow/index.php';

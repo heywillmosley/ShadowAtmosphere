@@ -30,10 +30,15 @@ if(!defined('ROOT_URI')){require'../../../system/inc/config.inc.php';header('Loc
 <div class="wrapper">
 <?php $e = new Environment; $e->environment_notice(); unset( $e ); ?>
 
-    <section>
-        <h2><?php echo SITE_NAME; ?></h2>
-        <p><?php echo TAGLINE; ?></p>
-        ------------------------------------------------------------------------
-   	</section>
-    
-	
+<a class="drop-nav-trigger" onclick="toggle_visibility('drop-nav')"></a>
+<nav class="actionbar">
+	<a class="show-for-small logo" href="<?php SITE_URL; ?>"><?php echo SITE_NAME; ?></a>
+    <ul id="drop-nav" class="drop-nav">
+        <li class="logo hide-for-small"><a href="<?php SITE_URL; ?>"><?php echo SITE_NAME; ?></a></li>
+        <li><a href="<?php echo SITE_URL; ?>shop/coffee">Coffee</a></li>
+        <li><a href="<?php echo SITE_URL; ?>shop/goodies">Goodies</a></li>
+        <li><a href="<?php echo SITE_URL; ?>shop/sales">Sales</a></li>
+        <li><a href="<?php echo SITE_URL; ?>wishlist">Wish List</a></li>
+        <li><a href="<?php echo SITE_URL; ?>cart">Cart</a></li>
+    </ul>
+</nav><!-- end action-bar -->
