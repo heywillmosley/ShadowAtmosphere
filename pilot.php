@@ -22,7 +22,7 @@
  * General Settings
  */
  	# Define Site Name
- 	define( 'SITE_NAME' , 'Shadow Atmosphere');
+ 	define( 'SITE_NAME' , 'Shadow Architecture');
 	
 	# Define Admin Contact email for error reporting
 	define( 'ADMIN_NAME', 'William Mosley, III' );
@@ -41,7 +41,7 @@
 	define( 'SHADOW_URI_LEVEL', 0 );
 	
 	# Define current App
-	define( 'CURRENT_APP', 'ninjablack_master' );
+	define( 'CURRENT_APP', 'ninjablack_Master' );
 	
 	/* Define app type\
 	 * Types:
@@ -74,7 +74,7 @@ if( in_array( $host, array( 'local', '127.0', '192.1' ) ))
 	 * E.g. Alias = 'google/photos'
 	 * www/google/photos    Original Path "C:\Users\Tsmith\Google Photos"
 	 */
-	define( 'SYS_ALIAS', '' );
+	define( 'SYS_ALIAS', 'shadow' );
 	
 }
 
