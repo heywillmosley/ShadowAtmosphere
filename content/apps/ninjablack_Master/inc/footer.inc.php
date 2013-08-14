@@ -1,5 +1,4 @@
-<?php # Prevents direct script access
-if(!defined('ROOT_URI')){require'../../../system/inc/config.inc.php';header('Location:'.SITE_URL);exit;}
+<?php defined('INDEX') or die() and exit(); // Prevents direct script access
 /**
  * Shadow
  *
@@ -20,31 +19,13 @@ if(!defined('ROOT_URI')){require'../../../system/inc/config.inc.php';header('Loc
 // --------------------------------------------------------------------------------?>
 
 <div class="footer row">
-	<div class="left">&copy; <?php auto_copyright(); echo ' ' . SITE_NAME; ?></div>
+	<div class="left">&copy; <?php echo '2013 ' . SITE_NAME; ?></div>
     <div class="right">
     	<a href="#" class="txt_wht">&uarr; Back to the Top</a>
     </div>
 </div>
 </div><!-- end wrapper -->
 
-<script>
-  document.write('<script src=' +
-  ('__proto__' in {} ? '<?php echo BASE_JS_URL; ?>vendor/zepto' : '<?php echo BASEURL; ?>js/vendor/jquery') +
-  '.js><\/script>')
-</script>
-<script src="<?php echo BASE_JS_URL; ?>vendor/foundation/foundation.min.js"></script>
-<script src="<?php echo BASE_JS_URL; ?>vendor/response.js"></script>
-<script src="<?php echo BASE_JS_URL; ?>vendor/foundation/foundation.dropdown.js"></script>
-<script src="<?php echo BASE_JS_URL; ?>vendor/foundation/jquery.offcanvas.js"></script>
 
-<!-- Load Javascripts -->
-<script src="<?php echo APP_JS_URL; ?>application.js"></script>
-
-<script src="<?php echo BASE_JS_URL; ?>shadow.js"></script>
-<script src="<?php echo BASE_JS_URL; ?>vendor/respond.min.js"></script>
-
-<script>
-  $(document).foundation();
-</script>
-
+<?php shdw_footer(); ?>
 </body>

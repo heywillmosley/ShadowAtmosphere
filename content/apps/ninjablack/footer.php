@@ -1,5 +1,4 @@
-<?php # Prevents direct script access
-if(!defined('ROOT_URI')){require'../../../system/inc/config.inc.php';header('Location:'.SITE_URL);exit;}
+<?php defined('INDEX') or die() and exit(); // Prevents direct script access
 /**
  * Shadow
  *
@@ -33,9 +32,6 @@ if(!defined('ROOT_URI')){require'../../../system/inc/config.inc.php';header('Loc
   '.js><\/script>')
 </script>
 <script src="<?php echo BASE_JS_URL; ?>vendor/foundation/foundation.min.js"></script>
-<script src="<?php echo BASE_JS_URL; ?>vendor/response.js"></script>
-<script src="<?php echo BASE_JS_URL; ?>vendor/foundation/foundation.dropdown.js"></script>
-<script src="<?php echo BASE_JS_URL; ?>vendor/foundation/jquery.offcanvas.js"></script>
 
 <!-- Load Javascripts -->
 <script src="<?php echo APP_JS_URL; ?>application.js"></script>
